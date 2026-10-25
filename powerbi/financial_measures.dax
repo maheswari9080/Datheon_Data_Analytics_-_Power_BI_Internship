@@ -1,0 +1,89 @@
+// ==============================================================================
+// ENTERPRISE POWER BI FINANCIAL DAX MEASURES LIBRARY
+// Module D: Financial Performance Intelligence
+// Platform: RISK Enterprise Decision Intelligence Platform
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. AUDITED INCOME STATEMENT FINANCIAL MEASURES
+// ------------------------------------------------------------------------------
+
+[Gross Sales] = 
+SUM(FinancialFact[Gross Sales])
+/* Formatted as Currency: $#,##0.00 */
+
+[Total Discounts] = 
+SUM(FinancialFact[Discounts])
+/* Formatted as Currency: $#,##0.00 */
+
+[Net Sales] = 
+SUM(FinancialFact[Sales])
+/* Formatted as Currency: $#,##0.00 */
+
+[Total COGS] = 
+SUM(FinancialFact[COGS])
+/* Formatted as Currency: $#,##0.00 */
+
+[Total Profit] = 
+SUM(FinancialFact[Profit])
+/* Formatted as Currency: $#,##0.00 */
+
+[Total Units Sold] = 
+SUM(FinancialFact[Units Sold])
+/* Formatted as Whole Number: #,##0 */
+
+// ------------------------------------------------------------------------------
+// 2. FINANCIAL MARGIN & EFFICIENCY RATIOS
+// ------------------------------------------------------------------------------
+
+[Gross Profit Margin %] = 
+DIVIDE([Total Profit], [Net Sales], 0)
+/* Formatted as Percentage: 0.00% */
+
+[COGS Ratio %] = 
+DIVIDE([Total COGS], [Net Sales], 0)
+/* Formatted as Percentage: 0.00% */
+
+[Effective Discount Rate %] = 
+DIVIDE([Total Discounts], [Gross Sales], 0)
+/* Formatted as Percentage: 0.00% */
+
+[Average Selling Price Per Unit] = 
+DIVIDE([Net Sales], [Total Units Sold], 0)
+/* Formatted as Currency: $#,##0.00 */
+
+[Average Cost Per Unit] = 
+DIVIDE([Total COGS], [Total Units Sold], 0)
+/* Formatted as Currency: $#,##0.00 */
+
+// ------------------------------------------------------------------------------
+// 3. SCENARIO INTELLIGENCE & SENSITIVITY DAX MEASURES
+// Requires What-If Parameter tables: 'DiscountParam', 'COGSParam', 'VolumeParam'
+// ------------------------------------------------------------------------------
+
+[Simulated Units Sold] = 
+VAR _VolumeChange = SELECTEDVALUE('VolumeParam'[VolumeChangePct], 0)
+RETURN
+    [Total Units Sold] * (1 + _VolumeChange)
+
+[Simulated Discounts] = 
+VAR _DiscReduction = SELECTEDVALUE('DiscountParam'[DiscountReductionPct], 0)
+RETURN
+    [Total Discounts] * (1 - _DiscReduction)
+
+[Simulated COGS] = 
+VAR _COGSReduction = SELECTEDVALUE('COGSParam'[COGSReductionPct], 0)
+RETURN
+    [Total COGS] * (1 - _COGSReduction)
+
+[Simulated Gross Profit] = 
+[Net Sales] - [Simulated COGS]
+
+[Simulated Gross Profit Margin %] = 
+DIVIDE([Simulated Gross Profit], [Net Sales], 0)
+
+[Scenario Profit Delta $] = 
+[Simulated Gross Profit] - [Total Profit]
+
+[Scenario Profit Delta %] = 
+DIVIDE([Scenario Profit Delta $], [Total Profit], 0)

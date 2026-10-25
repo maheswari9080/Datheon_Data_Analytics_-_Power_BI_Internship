@@ -1,147 +1,189 @@
 # RISK Enterprise Decision Intelligence Platform
 
-> **Transform raw business data into validated evidence, measurable insights, and actionable decisions.**
+<p align="center">
+  <img src="outputs/figures/hero_banner.png" alt="RISK Enterprise Decision Intelligence Platform Hero Banner" width="100%">
+</p>
 
-[![Python Tests](https://img.shields.io/badge/pytest-11%20passed-success)](tests/)
-[![Code Style](https://img.shields.io/badge/code%20style-pep8-blue.svg)](src/)
-[![Power BI Architecture](https://img.shields.io/badge/Power%20BI-Star%20Schema%20DAX-yellow)](powerbi/)
-[![Analytical Rigor](https://img.shields.io/badge/Reproducibility-100%25-brightgreen)](reports/)
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
+  <a href="tests/"><img src="https://img.shields.io/badge/pytest-11%20passed%20(100%25)-success" alt="Pytest Tests"></a>
+  <a href="src/"><img src="https://img.shields.io/badge/Code%20Quality-Verified-brightgreen" alt="Code Quality"></a>
+  <a href="powerbi/"><img src="https://img.shields.io/badge/Power%20BI-Kimball%20Star%20Schema-yellow" alt="Power BI"></a>
+  <a href="reports/linkedin_post.md"><img src="https://img.shields.io/badge/LinkedIn-Showcase%20Article-0077B5" alt="LinkedIn Article"></a>
+</p>
 
 ---
 
 ## Executive Overview
 
-The **RISK Enterprise Decision Intelligence Platform** is an enterprise-grade analytics suite engineered to extract, audit, model, and translate multi-source business data into defensible commercial strategies. Developed from the perspective of an elite multidisciplinary analytics team (Principal Data Scientist, Senior Data Analyst, Power BI Solutions Architect, Financial Intelligence Analyst, Customer Behavior Researcher, and Data Quality Auditor), the platform spans four core operational modules:
+The **RISK Enterprise Decision Intelligence Platform** transforms raw multi-source business data into mathematically validated evidence, dimensional architectures, and executive commercial decisions. 
 
-1. **Module A — Retail Revenue Intelligence**: Empirical sales distribution, discount destruction thresholds, product profitability rankings, and seasonal time series analysis using Python (`Pandas`, `NumPy`, `Matplotlib`, `Seaborn`).
-2. **Module B — Executive Power BI Intelligence**: Kimball Star Schema dimensional modeling (`FactSales`, `DimDate`, `DimProduct`, `DimCustomer`, `DimGeography`), enterprise DAX measure library, Power Query M recipes, and four interactive report wireframes.
-3. **Module C — Customer Retention Intelligence**: Cross-sectional tenure cohort analysis, subscription friction diagnostics, and leak-free machine learning churn benchmarking (`Scikit-Learn`, `Plotly`).
-4. **Module D — Financial Performance Intelligence**: Audited income statement modeling, COGS ratio diagnostics, country margin distributions, and What-If scenario simulations.
-
----
-
-## Repository Architecture
-
-```
-risk-enterprise-intelligence/
-├── README.md                                  <- Master portfolio documentation & interview guide
-├── requirements.txt                           <- Production Python dependencies
-├── .gitignore                                 <- Source control exclusion rules
-├── run_pipeline.py                            <- Master single-command automated pipeline runner
-├── data/
-│   ├── raw/                                   <- Immutable raw data with SHA-256 provenance hashes
-│   │   ├── manifest.json                      <- Cryptographic verification manifest
-│   │   ├── superstore_sales.csv               <- Multi-table retail transactional source
-│   │   ├── telco_customer_churn.csv           <- Subscriber churn observation source
-│   │   └── financial_sample.xlsx              <- Audited enterprise financial workbook
-│   └── processed/                             <- Sanitized Parquet and Power BI Star Schema tables
-│       ├── superstore_orders_clean.parquet    <- 9,994 clean orders with engineered features
-│       ├── superstore_people_clean.parquet    <- 4 regional manager records
-│       ├── superstore_returns_clean.parquet   <- 800 order return records
-│       ├── powerbi_fact_sales.csv             <- Star schema transactional fact table
-│       ├── powerbi_dim_date.csv               <- Continuous 1,476-day calendar table
-│       ├── powerbi_dim_product.csv            <- Normalized product dimension
-│       ├── powerbi_dim_customer.csv           <- Normalized customer dimension
-│       ├── powerbi_dim_geography.csv          <- Normalized geography dimension
-│       ├── telco_churn_clean.parquet          <- 7,043 audited customer records
-│       ├── telco_tenure_cohorts.csv           <- Binned tenure cohort matrix
-│       └── financial_sample_clean.parquet     <- 700 verified financial accounting records
-├── src/                                       <- Modular, testable analytical codebase
-│   ├── __init__.py                            <- Package initialization
-│   ├── loaders.py                             <- Resilient ingestion & CSV disaggregation engine
-│   ├── validation.py                          <- Schema validation & forensic boundary assertions
-│   ├── cleaning.py                            <- Sanitization, imputation & feature engineering
-│   ├── metrics.py                             <- Audited business formulas & KPI engine
-│   ├── visualization.py                       <- Accessible enterprise visualization tokens
-│   ├── retail_analysis.py                     <- Module A analytics & publication charts
-│   ├── retention_analysis.py                  <- Module C analytics, cohorts & ML benchmarks
-│   └── financial_analysis.py                  <- Module D analytics & scenario simulations
-├── notebooks/                                 <- Executable, interactive analytical walkthroughs
-│   ├── 01_retail_revenue_intelligence.ipynb   <- Retail deep-dive & margin diagnostics
-│   ├── 02_powerbi_data_preparation.ipynb      <- Star schema construction & foreign key audit
-│   ├── 03_customer_retention_intelligence.ipynb <- Tenure cohorts & predictive ML modeling
-│   └── 04_financial_performance_intelligence.ipynb <- Accounting statements & scenario engine
-├── powerbi/                                   <- Business intelligence artifacts
-│   ├── retail_model.md                        <- Star schema specs, cardinality & 4-page wireframes
-│   ├── retail_measures.dax                    <- Enterprise DAX measures (KPIs, YoY, Time Intel)
-│   ├── financial_model.md                     <- Financial model specs, M recipes & 3-page wireframes
-│   └── financial_measures.dax                 <- Audited financial DAX measures & scenario logic
-├── reports/                                   <- Evidence-based executive deliverables
-│   ├── executive_summary.md                   <- Cross-domain strategic intelligence briefing
-│   ├── data_quality_report.md                 <- Forensic investigation & data dictionary audit
-│   ├── business_findings.md                   <- Formal Evidence Register with reproducible formulas
-│   └── limitations.md                         <- Methodological safeguards & environmental disclosures
-├── outputs/                                   <- Publication-grade visual figures (300 DPI)
-│   └── figures/
-│       ├── retail_01_category_revenue_profit.png
-│       ├── retail_02_discount_margin_scatter.png
-│       ├── retail_03_monthly_sales_trend.png
-│       ├── retail_04_regional_segment_matrix.png
-│       ├── retail_05_negative_margin_subcategories.png
-│       ├── churn_01_distribution_by_contract.png
-│       ├── churn_02_tenure_cohort_retention.png
-│       ├── churn_03_monthly_charges_distribution.png
-│       ├── churn_04_service_combination_churn.png
-│       ├── churn_05_feature_importance_risk.png
-│       ├── fin_01_revenue_profit_by_segment.png
-│       ├── fin_02_country_margin_distribution.png
-│       ├── fin_03_discount_band_waterfall.png
-│       └── fin_04_scenario_sensitivity_simulation.png
-└── tests/                                     <- Automated unit test suite
-    ├── __init__.py
-    ├── test_validation.py                     <- Schema rules & boundary condition tests
-    └── test_metrics.py                        <- KPI accuracy & financial reconciliation tests
-```
+Developed as an execution-focused corporate analytics portfolio across four key operational challenges:
+- **Module A — Retail Revenue Intelligence**: Sales distribution, discount destruction thresholds, and product profitability rankings in Python.
+- **Module B — Executive Power BI Intelligence**: Enterprise Kimball Star Schema (`FactSales` + 4 normalized dimensions) with 24 custom DAX measures.
+- **Module C — Customer Retention Intelligence**: Cross-sectional tenure cohorts, subscription friction diagnostics, and leak-free machine learning churn benchmarking.
+- **Module D — Financial Performance Intelligence**: Audited income statement modeling, COGS ratio diagnostics, and sensitivity scenario simulations.
 
 ---
 
-## Verified Executive KPI Scorecard
+## Platform Visual Showcase & LinkedIn Feature
 
-All figures are programmatically computed, cross-reconciled between Python and Power BI DAX, and audited against raw source records:
+<p align="center">
+  <img src="outputs/figures/linkedin_showcase.png" alt="RISK Enterprise Platform Complete Showcase Infographic" width="100%">
+</p>
 
-| Business Domain | Metric Description | Audited Value | Mathematical Formula |
+> [!TIP]
+> **Ready-to-Share LinkedIn Post**: A comprehensive, publication-ready LinkedIn post is prepared in [`linkedin.md`](linkedin.md) and [`reports/linkedin_post.md`](reports/linkedin_post.md). The high-resolution light-theme showcase image above is available at [`outputs/figures/linkedin_showcase.png`](outputs/figures/linkedin_showcase.png) (and vector format at [`outputs/figures/linkedin_showcase.svg`](outputs/figures/linkedin_showcase.svg)).
+
+---
+
+## Modular System Architecture
+
+<p align="center">
+  <img src="outputs/figures/architecture_diagram.png" alt="RISK Platform System Architecture Blueprint" width="100%">
+</p>
+
+The platform follows a strict four-stage execution pipeline:
+1. **Raw Ingestion & Forensics**: Cryptographic SHA-256 verification, vertical CSV disaggregation, and missing postal code imputation.
+2. **Validation & Preparation Engine**: Strict schema enforcement, primary key uniqueness testing, and accounting parity verification.
+3. **Core Intelligence Modules**: Four dedicated analytical layers in Python, Power BI DAX, and Scikit-Learn.
+4. **Strategic Executive Outputs**: Star schema tables, DAX libraries, executive reports, reproducible notebooks, and 300 DPI figures.
+
+---
+
+## Audited Executive Scorecard
+
+All figures are programmatically computed and verified across Python and Power BI DAX:
+
+| Domain Module | Key Commercial Metric | Audited Value | Accounting Formula & Evidence |
 | :--- | :--- | :--- | :--- |
-| **Retail Operations** | **Total Net Sales** | **$2,297,200.86** | `SUM(Sales)` across 9,994 orders |
-| Retail Operations | **Total Net Profit** | **$286,397.02** | `SUM(Profit)` |
-| Retail Operations | **Overall Profit Margin** | **12.47%** | `Total Profit / Total Sales` |
-| Retail Operations | **Total Order Volume** | **5,009 Orders** | `DISTINCTCOUNT(Order ID)` |
-| Retail Operations | **Profit Destruction** | **-$156,131.29** | Cumulative loss across 1,871 transactions with `Profit < 0` |
-| **Customer Retention**| **Eligible Population**| **7,043 Subscribers**| Total unique subscriber accounts in snapshot |
-| Customer Retention | **Baseline Churn Rate** | **26.54%** | `1,869 Churned / 7,043 Eligible * 100` |
-| Customer Retention | **Baseline Retention** | **73.46%** | `5,174 Retained / 7,043 Eligible * 100` |
-| Customer Retention | **Monthly Revenue at Risk**| **$139,130.85/mo** | `SUM(MonthlyCharges)` for `Churn == 'Yes'` (30.50% of MRR) |
-| **Financial Performance**| **Gross Sales** | **$127,931,598.50**| `SUM(Units Sold * Sale Price)` |
-| Financial Performance| **Commercial Discounts**| **$9,205,248.24** | Effective discount rate: 7.20% |
-| Financial Performance| **Audited Net Sales** | **$118,726,350.26**| `Gross Sales - Discounts` (Identity reconciled) |
-| Financial Performance| **Cost of Goods Sold** | **$101,832,648.00**| COGS Ratio: 85.77% of Net Sales |
-| Financial Performance| **Audited Gross Profit** | **$16,893,702.26** | `Net Sales - COGS` (Gross Margin: 14.23%) |
+| **Module A & B (Retail)** | **Total Net Sales** | **$2,297,200.86** | `SUM(Sales)` across 9,994 line items |
+| Module A & B (Retail) | **Total Net Profit** | **$286,397.02** | `SUM(Profit)` |
+| Module A & B (Retail) | **Profit Margin %** | **12.47%** | `Total Profit / Total Sales` |
+| Module A & B (Retail) | **Total Orders** | **5,009 Orders** | `DISTINCTCOUNT(Order ID)` |
+| Module A & B (Retail) | **Profit Destruction** | **-$156,131.29** | Cumulative loss across 1,871 transactions with `Profit < 0` |
+| **Module C (Retention)** | **Eligible Population**| **7,043 Subscribers**| Total active subscriber accounts in snapshot |
+| Module C (Retention) | **Baseline Churn Rate** | **26.54%** | `1,869 Churned / 7,043 Eligible * 100` |
+| Module C (Retention) | **Baseline Retention** | **73.46%** | `5,174 Retained / 7,043 Eligible * 100` |
+| Module C (Retention) | **Monthly Revenue at Risk**| **$139,130.85/mo** | `SUM(MonthlyCharges)` for `Churn == 'Yes'` (30.50% MRR) |
+| **Module D (Financial)** | **Gross Sales** | **$127,931,598.50**| `SUM(Units Sold * Sale Price)` |
+| Financial Performance | **Commercial Discounts**| **$9,205,248.24** | Effective discount rate: 7.20% |
+| Financial Performance | **Audited Net Sales** | **$118,726,350.26**| `Gross Sales - Discounts` (Identity reconciled) |
+| Financial Performance | **Cost of Goods Sold** | **$101,832,648.00**| COGS Ratio: 85.77% of Net Sales |
+| Financial Performance | **Audited Gross Profit** | **$16,893,702.26** | `Net Sales - COGS` (Gross Margin: 14.23%) |
 
 ---
 
-## Key Data Forensics Discoveries
+## Visual Analytics Gallery
 
-1. **Vertical Concatenation in Superstore CSV**:  
-   The raw `superstore_sales.csv` file contains three stacked tables exported into a single file:
-   - Rows 1 to 9,994: `Orders` table (9,994 line items)
-   - Rows 9,995 to 9,999: `People` table (4 Regional Managers)
-   - Rows 10,000 to 10,800: `Returns` table (800 returned orders)  
-   Our loader (`src/loaders.py`) cleanly separates and models each entity.
+### Module A — Retail Revenue Intelligence
+<p align="center">
+  <img src="outputs/figures/retail_01_category_revenue_profit.png" width="49%">
+  <img src="outputs/figures/retail_02_discount_margin_scatter.png" width="49%">
+</p>
+<p align="center">
+  <img src="outputs/figures/retail_03_monthly_sales_trend.png" width="49%">
+  <img src="outputs/figures/retail_04_regional_segment_matrix.png" width="49%">
+</p>
+<p align="center">
+  <img src="outputs/figures/retail_05_negative_margin_subcategories.png" width="70%">
+</p>
 
-2. **Burlington, Vermont Missing Postal Codes**:  
-   Exactly 11 rows in Superstore Orders had missing Postal Codes, 100% belonging to Burlington, Vermont. Caused by legacy integer truncation of leading zero zip codes, these were properly imputed with `"05401"`.
-
-3. **Telco TotalCharges Whitespace Strings**:  
-   Exactly 11 subscribers exhibited a space `' '` in `TotalCharges`. All 11 had `tenure == 0` (brand new subscribers). Imputed to `$0.00` rather than deleting viable records.
-
-4. **Financial Column Header Whitespace**:  
-   The Net Sales column in `financial_sample.xlsx` was stored as `' Sales'` (with a leading space). Automatically sanitized in `src/loaders.py`.
+- **Key Takeaways**:
+  - Furniture delivers 32.3% of revenue ($742k) but only 6.4% of profit ($18.5k), with a fragile **2.49% margin** compared to Technology (**17.40%**) and Office Supplies (**17.04%**).
+  - The **Tables** sub-category is the primary loss leader, recording **-$17,725.48** in cumulative losses.
+  - Commercial discounts exceeding **20%** consistently push transactions into negative margin territory, destroying **-$156,131.29** across 1,871 orders.
 
 ---
 
-## Reproduction & Verification Guide
+### Module C — Customer Retention Intelligence
+<p align="center">
+  <img src="outputs/figures/churn_01_distribution_by_contract.png" width="49%">
+  <img src="outputs/figures/churn_02_tenure_cohort_retention.png" width="49%">
+</p>
+<p align="center">
+  <img src="outputs/figures/churn_03_monthly_charges_distribution.png" width="49%">
+  <img src="outputs/figures/churn_04_service_combination_churn.png" width="49%">
+</p>
+<p align="center">
+  <img src="outputs/figures/churn_05_feature_importance_risk.png" width="70%">
+</p>
 
-### 1. Installation
-Ensure Python 3.10+ is installed. Clone the repository and install dependencies:
+- **Key Takeaways**:
+  - **Tenure Drop-Off**: Year 1 accounts (0-12 months) experience a **47.44% churn rate**, dropping to **6.61%** for accounts past 5 years.
+  - **Contract Commitment**: Month-to-month contracts exhibit **42.71% churn** vs **2.83%** for two-year contracts.
+  - **Support Deficits**: Fiber optic subscribers without Tech Support churn at **41.6%**, dropping to **15.4%** when support services are bundled.
+  - **Supervised ML Benchmark**: Logistic Regression achieved **0.8418 ROC-AUC** and Random Forest achieved **0.8418 ROC-AUC** on a strict 80/20 stratified split.
+
+---
+
+### Module D — Financial Performance Intelligence
+<p align="center">
+  <img src="outputs/figures/fin_01_revenue_profit_by_segment.png" width="49%">
+  <img src="outputs/figures/fin_02_country_margin_distribution.png" width="49%">
+</p>
+<p align="center">
+  <img src="outputs/figures/fin_03_discount_band_waterfall.png" width="49%">
+  <img src="outputs/figures/fin_04_scenario_sensitivity_simulation.png" width="49%">
+</p>
+
+- **Key Takeaways**:
+  - **Market Drivers**: Government is the premier segment, generating **$52.5M in sales** and **$11.39M in profit (21.69% margin)**.
+  - **Geographic Consistency**: Germany (**15.53%**) and France (**15.42%**) lead operating margin health.
+  - **Scenario Simulation**: A 10% discount rationalization combined with a 5% COGS cost reduction expands gross profit by **+$1.42M (+8.43%)**.
+
+---
+
+## Repository Directory Tree
+
+```
+├── LICENSE                                    <- MIT License (2026 maheswari9080)
+├── README.md                                  <- Master portfolio documentation
+├── linkedin.md                                <- Ready-to-copy LinkedIn publication post
+├── requirements.txt                           <- Python dependency manifest
+├── .gitignore                                 <- Source control exclusions
+├── run_pipeline.py                            <- Master automated pipeline runner (0.81s)
+├── data/
+│   ├── raw/                                   <- Immutable source data with SHA-256 hashes
+│   │   ├── manifest.json                      <- Cryptographic verification manifest
+│   │   ├── superstore_sales.csv               <- Multi-table retail source
+│   │   ├── telco_customer_churn.csv           <- Subscriber observation source
+│   │   └── financial_sample.xlsx              <- Audited accounting workbook
+│   └── processed/                             <- Cleaned parquets & star schema CSVs
+├── src/                                       <- Modular analytics codebase
+│   ├── loaders.py                             <- Multi-table ingestion & CSV disaggregation
+│   ├── validation.py                          <- Schema enforcement & boundary checks
+│   ├── cleaning.py                            <- Sanitization, imputation & feature engineering
+│   ├── metrics.py                             <- Audited business formulas & scenario simulation
+│   ├── visualization.py                       <- 300 DPI chart styling tokens
+│   ├── retail_analysis.py                     <- Module A retail execution engine
+│   ├── retention_analysis.py                  <- Module C churn & ML benchmark engine
+│   └── financial_analysis.py                  <- Module D income statement & scenario engine
+├── notebooks/                                 <- Executable Jupyter notebooks
+│   ├── 01_retail_revenue_intelligence.ipynb
+│   ├── 02_powerbi_data_preparation.ipynb
+│   ├── 03_customer_retention_intelligence.ipynb
+│   └── 04_financial_performance_intelligence.ipynb
+├── powerbi/                                   <- Power BI model blueprints & DAX
+│   ├── retail_model.md                        <- Star schema specs & 4-page wireframes
+│   ├── retail_measures.dax                    <- Retail DAX measures library
+│   ├── financial_model.md                     <- Financial model specs & 3-page wireframes
+│   └── financial_measures.dax                 <- Financial DAX measures & scenario parameters
+├── reports/                                   <- Comprehensive executive reports
+│   ├── executive_summary.md                   <- Cross-domain strategic briefing
+│   ├── data_quality_report.md                 <- Forensic investigation & data dictionaries
+│   ├── business_findings.md                   <- Formal Evidence Register & formulas
+│   ├── limitations.md                         <- Methodological boundaries & disclosures
+│   └── linkedin_post.md                       <- Full LinkedIn post draft & hashtags
+├── outputs/figures/                           <- 14 publication charts + light theme infographics
+└── tests/                                     <- Automated unit test suite (11/11 passing)
+```
+
+---
+
+## Getting Started & Reproducibility
+
+### 1. Clone & Install
 ```bash
 git clone git@github.com:maheswari9080/Datheon_Data_Analytics_-_Power_BI_Internship.git
 cd Datheon_Data_Analytics_-_Power_BI_Internship
@@ -149,48 +191,30 @@ pip install -r requirements.txt
 ```
 
 ### 2. Execute Automated End-to-End Pipeline
-Run the master pipeline script to ingest raw data, execute schema validation, engineer features, export processed parquets, and verify KPI reconciliation in ~2 seconds:
+Run the master automated pipeline to ingest raw data, execute schema validation, engineer features, export processed parquets, and verify reconciliation:
 ```bash
 python run_pipeline.py
 ```
 
-### 3. Run Unit Test Suite
-Execute the comprehensive automated test suite with coverage:
+### 3. Run Automated Tests
 ```bash
 pytest tests/ -v
 ```
-*Expected Result: 11 tests passed in ~3.5 seconds with 100% pass rate.*
-
-### 4. Generate Analysis & High-Resolution Figures
-Execute the individual analytical modules to regenerate publication figures in `outputs/figures/`:
-```bash
-python src/retail_analysis.py
-python src/retention_analysis.py
-python src/financial_analysis.py
-```
+*Expected: 11 passed in ~1.85 seconds with 100% pass rate.*
 
 ---
 
-## Power BI Dimensional Model Deployment
+## Power BI Dimensional Model Setup
 
-Because native Power BI Desktop is not installed on this server host, the model is architected for instant 4-minute instantiation in Power BI Desktop:
-1. Open **Power BI Desktop** and import the 5 star schema tables from `data/processed/`:
-   - `powerbi_fact_sales.csv`
-   - `powerbi_dim_date.csv`
-   - `powerbi_dim_product.csv`
-   - `powerbi_dim_customer.csv`
-   - `powerbi_dim_geography.csv`
-2. Configure **Single-Direction 1-to-Many (`1:*`)** relationships linking Dimension primary keys to Fact foreign keys (see [retail_model.md](powerbi/retail_model.md)).
-3. Create a measure table and paste the pre-built DAX measures from [retail_measures.dax](powerbi/retail_measures.dax).
+Because native Power BI Desktop is not installed on this server host, the model is prepared for instant 4-minute instantiation:
+1. Open **Power BI Desktop** and load the 5 tables from `data/processed/`:
+   `powerbi_fact_sales.csv`, `powerbi_dim_date.csv`, `powerbi_dim_product.csv`, `powerbi_dim_customer.csv`, `powerbi_dim_geography.csv`.
+2. Configure **Single-Direction 1-to-Many (`1:*`)** relationships from Dimension primary keys to Fact foreign keys (see [retail_model.md](powerbi/retail_model.md)).
+3. Import the DAX measures from [retail_measures.dax](powerbi/retail_measures.dax).
 4. Lay out the 4 report pages following the visual wireframe specifications in [retail_model.md](powerbi/retail_model.md).
 
 ---
 
-## Internship Interview Presentation Guide
+## License
 
-When discussing this platform in a technical data analyst interview, emphasize:
-- **Data Engineering Rigor**: Discovered and programmatically resolved multi-table vertical concatenation in CSV files and leading-zero zip code truncation rather than naively running `dropna()`.
-- **Dimensional Modeling Craft**: Designed a pure Kimball Star Schema with a dedicated calendar table, eliminating many-to-many ambiguity and optimizing DAX time intelligence.
-- **Methodological Integrity**: Explicitly distinguished cross-sectional tenure strata from longitudinal survival curves; refused to fabricate budget variance figures where source budgets did not exist.
-- **Defensible Machine Learning**: Evaluated churn prediction against a dummy baseline using stratified splits and PR-AUC/ROC-AUC metrics to prevent data leakage.
-- **Commercial Acumen**: Translated abstract data findings into quantifiable business interventions (e.g. 20% discount ceiling on Tables, 90-day subscriber onboarding safeguards).
+This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.

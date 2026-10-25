@@ -1,0 +1,166 @@
+// ==============================================================================
+// ENTERPRISE POWER BI DAX MEASURES LIBRARY
+// Module B: Executive Power BI Intelligence
+// Platform: RISK Enterprise Decision Intelligence Platform
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. CORE TRANSACTIONAL & VOLUME MEASURES
+// ------------------------------------------------------------------------------
+
+[Total Sales] = 
+SUM(FactSales[Sales])
+/* Formatted as Currency: $#,##0.00 */
+
+[Total Profit] = 
+SUM(FactSales[Profit])
+/* Formatted as Currency: $#,##0.00 */
+
+[Total Quantity] = 
+SUM(FactSales[Quantity])
+/* Formatted as Whole Number: #,##0 */
+
+[Total Orders] = 
+DISTINCTCOUNT(FactSales[Order ID])
+/* Formatted as Whole Number: #,##0 */
+
+[Total Customers] = 
+DISTINCTCOUNT(FactSales[CustomerKey])
+/* Formatted as Whole Number: #,##0 */
+
+[Total Transactions] = 
+COUNTROWS(FactSales)
+/* Formatted as Whole Number: #,##0 */
+
+// ------------------------------------------------------------------------------
+// 2. PROFITABILITY & COMMERCIAL RATIOS
+// ------------------------------------------------------------------------------
+
+[Profit Margin %] = 
+DIVIDE([Total Profit], [Total Sales], 0)
+/* Formatted as Percentage: 0.00% */
+
+[Average Order Value] = 
+DIVIDE([Total Sales], [Total Orders], 0)
+/* Formatted as Currency: $#,##0.00 */
+
+[Profit Per Order] = 
+DIVIDE([Total Profit], [Total Orders], 0)
+/* Formatted as Currency: $#,##0.00 */
+
+[Average Discount Rate %] = 
+AVERAGE(FactSales[Discount])
+/* Formatted as Percentage: 0.00% */
+
+[Average Shipping Days] = 
+AVERAGE(FactSales[Shipping Days])
+/* Formatted as Decimal: 0.0 */
+
+// ------------------------------------------------------------------------------
+// 3. LOSS DIAGNOSTICS & PROFIT DESTRUCTION MEASURES
+// ------------------------------------------------------------------------------
+
+[Total Losses] = 
+CALCULATE(
+    SUM(FactSales[Profit]),
+    FactSales[Profit] < 0
+)
+/* Formatted as Currency: $#,##0.00 */
+
+[Loss Transactions Count] = 
+CALCULATE(
+    COUNTROWS(FactSales),
+    FactSales[Profit] < 0
+)
+/* Formatted as Whole Number: #,##0 */
+
+[Loss Transaction Share %] = 
+DIVIDE([Loss Transactions Count], [Total Transactions], 0)
+/* Formatted as Percentage: 0.00% */
+
+[Profitable Transactions Count] = 
+CALCULATE(
+    COUNTROWS(FactSales),
+    FactSales[Profit] >= 0
+)
+/* Formatted as Whole Number: #,##0 */
+
+// ------------------------------------------------------------------------------
+// 4. RETURN INTELLIGENCE MEASURES
+// ------------------------------------------------------------------------------
+
+[Returned Orders Count] = 
+CALCULATE(
+    DISTINCTCOUNT(FactSales[Order ID]),
+    FactSales[Returned Flag] = 1
+)
+/* Formatted as Whole Number: #,##0 */
+
+[Order Return Rate %] = 
+DIVIDE([Returned Orders Count], [Total Orders], 0)
+/* Formatted as Percentage: 0.00% */
+
+// ------------------------------------------------------------------------------
+// 5. TIME INTELLIGENCE & YOY GROWTH MEASURES
+// Requires active relationship between FactSales[OrderDateKey] and DimDate[DateKey]
+// ------------------------------------------------------------------------------
+
+[Sales PY] = 
+CALCULATE(
+    [Total Sales],
+    SAMEPERIODLASTYEAR(DimDate[Date])
+)
+/* Formatted as Currency: $#,##0.00 */
+
+[Sales YoY Growth $] = 
+VAR _Current = [Total Sales]
+VAR _Previous = [Sales PY]
+RETURN
+    IF(
+        NOT ISBLANK(_Current) && NOT ISBLANK(_Previous),
+        _Current - _Previous,
+        BLANK()
+    )
+/* Formatted as Currency: $#,##0.00 */
+
+[Sales YoY Growth %] = 
+VAR _Current = [Total Sales]
+VAR _Previous = [Sales PY]
+RETURN
+    DIVIDE(_Current - _Previous, _Previous, BLANK())
+/* Formatted as Percentage: +0.00%;-0.00%;0.00% */
+
+[Profit PY] = 
+CALCULATE(
+    [Total Profit],
+    SAMEPERIODLASTYEAR(DimDate[Date])
+)
+/* Formatted as Currency: $#,##0.00 */
+
+[Profit YoY Growth %] = 
+VAR _Current = [Total Profit]
+VAR _Previous = [Profit PY]
+RETURN
+    DIVIDE(_Current - _Previous, ABS(_Previous), BLANK())
+/* Formatted as Percentage: +0.00%;-0.00%;0.00% */
+
+[Sales YTD] = 
+TOTALYTD([Total Sales], DimDate[Date])
+/* Formatted as Currency: $#,##0.00 */
+
+[Sales MTD] = 
+TOTALMTD([Total Sales], DimDate[Date])
+/* Formatted as Currency: $#,##0.00 */
+
+// ------------------------------------------------------------------------------
+// 6. DYNAMIC KPI STATUS & FORMATTING TOKENS
+// ------------------------------------------------------------------------------
+
+[Margin Status Icon] = 
+SWITCH(
+    TRUE(),
+    [Profit Margin %] >= 0.20, "🟢 Strong (>=20%)",
+    [Profit Margin %] >= 0.10, "🟡 Moderate (10-20%)",
+    [Profit Margin %] >= 0.00, "🟠 Fragile (0-10%)",
+    "🔴 Loss Leader (<0%)"
+)

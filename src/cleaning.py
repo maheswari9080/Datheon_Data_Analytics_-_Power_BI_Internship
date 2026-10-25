@@ -144,7 +144,7 @@ def clean_financial_sample(financial_df: pd.DataFrame) -> pd.DataFrame:
     
     # Strip column names and string entries
     df.columns = [c.strip() for c in df.columns]
-    for col in df.select_dtypes(include="object").columns:
+    for col in df.select_dtypes(include=["object", "string", "str"]).columns:
         df[col] = df[col].astype(str).str.strip()
 
     # Ensure Date parsing

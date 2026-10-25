@@ -1,0 +1,24 @@
+{
+  "platform": "RISK Enterprise Decision Intelligence Platform",
+  "timestamp_utc": "2026-10-25T01:48:07.158106+00:00",
+  "datasets": {
+    "superstore_sales.csv": {
+      "source_url": "https://www.datheon.in/datasets/superstore_sales.csv",
+      "size_bytes": 2293765,
+      "sha256": "75264adc0cf180c493a2c56ef97e4087b32ad48fe663d600ed4a9f9ca7c183e9",
+      "verified": true
+    },
+    "telco_customer_churn.csv": {
+      "source_url": "https://www.datheon.in/datasets/telco_customer_churn.csv",
+      "size_bytes": 970457,
+      "sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+      "verified": true
+    },
+    "financial_sample.xlsx": {
+      "source_url": "https://www.datheon.in/datasets/financial_sample.xlsx",
+      "size_bytes": 83418,
+      "sha256": "c3f17156ab7c192571ecfc742e88c16a4b7243a4d4b4a420fcb68dec44e10196",
+      "verified": true
+    }
+  }
+}

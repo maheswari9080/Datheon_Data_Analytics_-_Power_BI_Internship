@@ -60,8 +60,9 @@ Audited enterprise financial statements across 16 monthly reporting periods:
 ✅ **0.81-Second Execution** automated end-to-end pipeline (`python run_pipeline.py`)  
 ✅ **Strict Ethical Analytics**: Preserved raw inputs immutably, separated cross-sectional observations from longitudinal claims, and documented all assumptions.
 
-Check out the full repository, Jupyter notebooks, DAX measures, and high-resolution figures on GitHub:
-👉 https://github.com/maheswari9080/Datheon_Data_Analytics_-_Power_BI_Internship
+Explore the live interactive executive dashboard and complete repository:
+🌐 Live Interactive Dashboard: https://maheswari9080.github.io/Datheon_Data_Analytics_-_Power_BI_Internship/
+📁 GitHub Repository: https://github.com/maheswari9080/Datheon_Data_Analytics_-_Power_BI_Internship
 
 I would love to hear your thoughts and feedback! How does your organization handle promotional discount ceilings and subscriber onboarding retention?
 

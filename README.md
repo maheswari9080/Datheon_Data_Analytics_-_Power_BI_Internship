@@ -5,12 +5,18 @@
 </p>
 
 <p align="center">
+  <a href="https://maheswari9080.github.io/Datheon_Data_Analytics_-_Power_BI_Internship/"><img src="https://img.shields.io/badge/GitHub%20Pages-Live%20Interactive%20Dashboard-brightgreen?logo=github&style=for-the-badge" alt="Live GitHub Pages Dashboard"></a>
+</p>
+
+<p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License"></a>
   <a href="tests/"><img src="https://img.shields.io/badge/pytest-11%20passed%20(100%25)-success" alt="Pytest Tests"></a>
   <a href="src/"><img src="https://img.shields.io/badge/Code%20Quality-Verified-brightgreen" alt="Code Quality"></a>
   <a href="powerbi/"><img src="https://img.shields.io/badge/Power%20BI-Kimball%20Star%20Schema-yellow" alt="Power BI"></a>
   <a href="reports/linkedin_post.md"><img src="https://img.shields.io/badge/LinkedIn-Showcase%20Article-0077B5" alt="LinkedIn Article"></a>
 </p>
+
+> 🌐 **Interactive Executive Dashboard**: Test the live platform, interactive charts, and real-time What-If financial simulator directly on [GitHub Pages](https://maheswari9080.github.io/Datheon_Data_Analytics_-_Power_BI_Internship/).
 
 ---
 

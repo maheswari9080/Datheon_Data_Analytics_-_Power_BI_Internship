@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520">
+  <defs>
+    <linearGradient id="archBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#0F172A" flood-opacity="0.05"/>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1200" height="520" rx="16" fill="url(#archBg)" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Title & Subtitle -->
+  <text x="50" y="45" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="800" fill="#0F172A">
+    RISK Platform Modular Architecture Blueprint
+  </text>
+  <text x="50" y="68" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#64748B">
+    End-to-End Execution Flow from Multi-Source Raw Data to Verified Executive Intelligence
+  </text>
+
+  <!-- Step Columns -->
+  <!-- Column 1: Raw Ingestion -->
+  <g transform="translate(50, 95)">
+    <rect width="240" height="380" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#boxShadow)"/>
+    <rect width="240" height="42" rx="12" fill="#F1F5F9"/>
+    <rect y="30" width="240" height="12" fill="#F1F5F9"/>
+    <text x="20" y="26" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1E293B">1. Raw Data &amp; Ingestion</text>
+
+    <!-- Items -->
+    <g transform="translate(15, 60)">
+      <rect width="210" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Superstore Sales CSV</text>
+      <text x="12" y="42" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">3 Stacked Tables Disaggregated</text>
+    </g>
+
+    <g transform="translate(15, 130)">
+      <rect width="210" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Telco Churn CSV</text>
+      <text x="12" y="42" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">7,043 Customer Records</text>
+    </g>
+
+    <g transform="translate(15, 200)">
+      <rect width="210" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Financial Sample XLSX</text>
+      <text x="12" y="42" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">16 Months Audited Statements</text>
+    </g>
+
+    <g transform="translate(15, 275)">
+      <rect width="210" height="85" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="12" y="22" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" fill="#1D4ED8">Forensic Loader Engine</text>
+      <text x="12" y="40" font-family="'Segoe UI', sans-serif" font-size="10" fill="#3B82F6">• SHA-256 Hash Auditing</text>
+      <text x="12" y="56" font-family="'Segoe UI', sans-serif" font-size="10" fill="#3B82F6">• ZIP Code Zero-Padding</text>
+      <text x="12" y="72" font-family="'Segoe UI', sans-serif" font-size="10" fill="#3B82F6">• Header Trim &amp; Imputation</text>
+    </g>
+  </g>
+
+  <!-- Column 2: Validation & Core -->
+  <g transform="translate(320, 95)">
+    <rect width="240" height="380" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#boxShadow)"/>
+    <rect width="240" height="42" rx="12" fill="#F1F5F9"/>
+    <rect y="30" width="240" height="12" fill="#F1F5F9"/>
+    <text x="20" y="26" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1E293B">2. Validation &amp; Prep</text>
+
+    <g transform="translate(15, 60)">
+      <rect width="210" height="75" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Schema Validation</text>
+      <text x="12" y="40" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">• Primary key uniqueness</text>
+      <text x="12" y="58" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">• Domain boundary checks</text>
+    </g>
+
+    <g transform="translate(15, 145)">
+      <rect width="210" height="75" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Feature Engineering</text>
+      <text x="12" y="40" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">• Discount bands &amp; margins</text>
+      <text x="12" y="58" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">• Tenure cohort stratification</text>
+    </g>
+
+    <g transform="translate(15, 230)">
+      <rect width="210" height="65" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="22" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Accounting Parity</text>
+      <text x="12" y="40" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">Gross - Disc = Net</text>
+      <text x="12" y="56" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">Net - COGS = Profit</text>
+    </g>
+
+    <g transform="translate(15, 305)">
+      <rect width="210" height="55" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+      <text x="12" y="24" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" fill="#047857">Pytest Test Suite</text>
+      <text x="12" y="42" font-family="'Segoe UI', sans-serif" font-size="10" fill="#059669">11 Passed in 1.85s</text>
+    </g>
+  </g>
+
+  <!-- Column 3: 4 Business Modules -->
+  <g transform="translate(590, 95)">
+    <rect width="290" height="380" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#boxShadow)"/>
+    <rect width="290" height="42" rx="12" fill="#F1F5F9"/>
+    <rect y="30" width="290" height="12" fill="#F1F5F9"/>
+    <text x="20" y="26" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1E293B">3. Core Intelligence Modules</text>
+
+    <!-- Module A -->
+    <g transform="translate(15, 55)">
+      <rect width="260" height="68" rx="8" fill="#EFF6FF" stroke="#BFDBFE"/>
+      <text x="12" y="20" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#1D4ED8">Module A: Retail Revenue</text>
+      <text x="12" y="38" font-family="'Segoe UI', sans-serif" font-size="11" fill="#334155">Profitability ranking, 20% discount cliff</text>
+      <text x="12" y="54" font-family="'Segoe UI', sans-serif" font-size="10" fill="#64748B">Tables -$17.7k loss leader, Q4 surge</text>
+    </g>
+
+    <!-- Module B -->
+    <g transform="translate(15, 133)">
+      <rect width="260" height="68" rx="8" fill="#FEF3C7" stroke="#FDE68A"/>
+      <text x="12" y="20" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#B45309">Module B: Power BI Intelligence</text>
+      <text x="12" y="38" font-family="'Segoe UI', sans-serif" font-size="11" fill="#334155">Kimball Star Schema (FactSales + 4 Dims)</text>
+      <text x="12" y="54" font-family="'Segoe UI', sans-serif" font-size="10" fill="#64748B">1,476 Day Calendar, Enterprise DAX</text>
+    </g>
+
+    <!-- Module C -->
+    <g transform="translate(15, 211)">
+      <rect width="260" height="68" rx="8" fill="#FEE2E2" stroke="#FECACA"/>
+      <text x="12" y="20" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#B91C1C">Module C: Customer Retention</text>
+      <text x="12" y="38" font-family="'Segoe UI', sans-serif" font-size="11" fill="#334155">26.5% Churn rate, Year 1 drop (47.4%)</text>
+      <text x="12" y="54" font-family="'Segoe UI', sans-serif" font-size="10" fill="#64748B">ML Benchmarks (0.8418 ROC-AUC)</text>
+    </g>
+
+    <!-- Module D -->
+    <g transform="translate(15, 289)">
+      <rect width="260" height="68" rx="8" fill="#ECFDF5" stroke="#A7F3D0"/>
+      <text x="12" y="20" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#047857">Module D: Financial Modeling</text>
+      <text x="12" y="38" font-family="'Segoe UI', sans-serif" font-size="11" fill="#334155">$127.9M Gross -> $16.9M Gross Profit</text>
+      <text x="12" y="54" font-family="'Segoe UI', sans-serif" font-size="10" fill="#64748B">Sensitivity Simulations (+8.4% upside)</text>
+    </g>
+  </g>
+
+  <!-- Column 4: Executive Deliverables -->
+  <g transform="translate(910, 95)">
+    <rect width="240" height="380" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#boxShadow)"/>
+    <rect width="240" height="42" rx="12" fill="#F1F5F9"/>
+    <rect y="30" width="240" height="12" fill="#F1F5F9"/>
+    <text x="20" y="26" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" fill="#1E293B">4. Strategic Outputs</text>
+
+    <g transform="translate(15, 60)">
+      <rect width="210" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Executive Reports</text>
+      <text x="12" y="42" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">Evidence Register &amp; Findings</text>
+    </g>
+
+    <g transform="translate(15, 130)">
+      <rect width="210" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">Jupyter Notebooks</text>
+      <text x="12" y="42" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">4 Reproducible Notebooks</text>
+    </g>
+
+    <g transform="translate(15, 200)">
+      <rect width="210" height="60" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+      <text x="12" y="24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" fill="#0F172A">300 DPI Visualizations</text>
+      <text x="12" y="42" font-family="'Segoe UI', sans-serif" font-size="11" fill="#64748B">14 High-Res Analysis Charts</text>
+    </g>
+
+    <g transform="translate(15, 275)">
+      <rect width="210" height="85" rx="8" fill="#F5F3FF" stroke="#DDD6FE"/>
+      <text x="12" y="22" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="700" fill="#6D28D9">Power BI Artifacts</text>
+      <text x="12" y="40" font-family="'Segoe UI', sans-serif" font-size="10" fill="#7C3AED">• 5 Star Schema CSVs</text>
+      <text x="12" y="56" font-family="'Segoe UI', sans-serif" font-size="10" fill="#7C3AED">• Complete DAX Measure Lib</text>
+      <text x="12" y="72" font-family="'Segoe UI', sans-serif" font-size="10" fill="#7C3AED">• 7 Report Page Layouts</text>
+    </g>
+  </g>
+</svg>

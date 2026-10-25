@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RISK Enterprise Decision Intelligence Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+<div class="app-container">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-badge">PORTFOLIO SUITE</span>
+      <h1>RISK Platform</h1>
+      <p class="brand-tagline">Decision Intelligence Platform</p>
+    </div>
+
+    <nav class="nav-menu">
+      <div class="nav-section-title">Core Navigation</div>
+      <a class="nav-item active" data-tab="cmd-center">
+        <span class="nav-icon">🏛️</span> Command Center
+      </a>
+
+      <div class="nav-section-title">Analytical Modules</div>
+      <a class="nav-item" data-tab="retail">
+        <span class="nav-icon">📈</span> Module A: Retail Revenue
+      </a>
+      <a class="nav-item" data-tab="powerbi">
+        <span class="nav-icon">📊</span> Module B: Power BI &amp; DAX
+      </a>
+      <a class="nav-item" data-tab="retention">
+        <span class="nav-icon">🔄</span> Module C: Retention &amp; Churn
+      </a>
+      <a class="nav-item" data-tab="finance">
+        <span class="nav-icon">💹</span> Module D: Financial Simulator
+      </a>
+
+      <div class="nav-section-title">Governance &amp; Auditing</div>
+      <a class="nav-item" data-tab="evidence">
+        <span class="nav-icon">📋</span> Evidence Register
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>11/11 Tests Passing (100%)</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main View -->
+  <main class="main-content">
+    <!-- Top Header -->
+    <header class="top-header">
+      <div class="header-left">
+        <h2 id="page-title">Executive Command Center</h2>
+        <p id="page-subtitle">Portfolio KPI Scorecard &amp; Unified System Architecture</p>
+      </div>
+      <div class="header-actions">
+        <a href="https://github.com/maheswari9080/Datheon_Data_Analytics_-_Power_BI_Internship" target="_blank" class="btn btn-secondary">
+          <span>GitHub Repo</span>
+        </a>
+        <a href="assets/linkedin_showcase.png" target="_blank" class="btn btn-primary">
+          <span>Showcase Image (HD)</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="view-container">
+      
+      <!-- =================================================================== -->
+      <!-- TAB 1: EXECUTIVE COMMAND CENTER -->
+      <!-- =================================================================== -->
+      <section id="cmd-center" class="tab-pane active">
+        <!-- KPI Scorecard -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Retail Net Revenue</span>
+              <span class="kpi-pill pill-primary">Module A</span>
+            </div>
+            <div class="kpi-value">$2,297,200</div>
+            <div class="kpi-subtitle">5,009 Orders • 12.47% Profit Margin</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Power BI Architecture</span>
+              <span class="kpi-pill pill-warning">Module B</span>
+            </div>
+            <div class="kpi-value">Star Schema</div>
+            <div class="kpi-subtitle">FactSales + 4 Dims • 1,476 Calendar Days</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Subscriber Churn Rate</span>
+              <span class="kpi-pill pill-danger">Module C</span>
+            </div>
+            <div class="kpi-value">26.54%</div>
+            <div class="kpi-subtitle">7,043 Accounts • $139.1k/mo At Risk</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-header">
+              <span class="kpi-title">Financial Gross Profit</span>
+              <span class="kpi-pill pill-success">Module D</span>
+            </div>
+            <div class="kpi-value">$16,893,702</div>
+            <div class="kpi-subtitle">$118.7M Net Sales • 14.23% Gross Margin</div>
+          </div>
+        </div>
+
+        <!-- Hero Showcase Banner -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3>Executive Portfolio Overview</h3>
+              <p>End-to-End Decision Intelligence Suite Across Retail, Power BI, Churn &amp; Finance</p>
+            </div>
+          </div>
+          <div class="figure-container">
+            <img src="assets/hero_banner.png" alt="Platform Executive Banner">
+          </div>
+        </div>
+
+        <!-- Architecture Diagram -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3>System Architecture Blueprint</h3>
+              <p>Four-Stage Analytical Execution from Raw Ingestion to Executive Intelligence</p>
+            </div>
+          </div>
+          <div class="figure-container">
+            <img src="assets/architecture_diagram.png" alt="Platform Architecture Diagram">
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- TAB 2: MODULE A - RETAIL REVENUE -->
+      <!-- =================================================================== -->
+      <section id="retail" class="tab-pane">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">Total Sales</span><span class="kpi-pill pill-primary">Audited</span></div>
+            <div class="kpi-value">$2,297,200.86</div>
+            <div class="kpi-subtitle">9,994 Line Item Transactions</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">Total Profit</span><span class="kpi-pill pill-success">Audited</span></div>
+            <div class="kpi-value">$286,397.02</div>
+            <div class="kpi-subtitle">12.47% Overall Enterprise Margin</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">Loss Destruction</span><span class="kpi-pill pill-danger">Risk Alert</span></div>
+            <div class="kpi-value">-$156,131.29</div>
+            <div class="kpi-subtitle">1,871 Transactions with Profit &lt; 0</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">Average Order Value</span><span class="kpi-pill pill-primary">AOV</span></div>
+            <div class="kpi-value">$458.61</div>
+            <div class="kpi-subtitle">Profit Per Order: $57.18</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Category Volume vs. Profitability</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/retail_01_category_revenue_profit.png" alt="Category Revenue and Profit">
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>20% Discount Margin Destruction Curve</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/retail_02_discount_margin_scatter.png" alt="Discount Margin Scatter">
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Monthly Sales &amp; Profit Velocity (2015-2018)</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/retail_03_monthly_sales_trend.png" alt="Monthly Trend">
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Sub-Category Profitability &amp; Loss Leaders</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/retail_05_negative_margin_subcategories.png" alt="Subcategory Loss Leaders">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- TAB 3: MODULE B - POWER BI & DAX -->
+      <!-- =================================================================== -->
+      <section id="powerbi" class="tab-pane">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3>Kimball Star Schema Architecture</h3>
+              <p>Single-direction 1-to-Many (1:*) relationships strictly preventing circular ambiguity</p>
+            </div>
+          </div>
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>From Dimension Table</th>
+                  <th>Primary Key</th>
+                  <th>To Fact Table</th>
+                  <th>Foreign Key</th>
+                  <th>Cardinality</th>
+                  <th>Cross-Filter Direction</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>DimDate</strong></td>
+                  <td>DateKey</td>
+                  <td>FactSales</td>
+                  <td>OrderDateKey</td>
+                  <td>1 to Many (1:*)</td>
+                  <td>Single (DimDate filters FactSales)</td>
+                </tr>
+                <tr>
+                  <td><strong>DimCustomer</strong></td>
+                  <td>CustomerKey</td>
+                  <td>FactSales</td>
+                  <td>CustomerKey</td>
+                  <td>1 to Many (1:*)</td>
+                  <td>Single</td>
+                </tr>
+                <tr>
+                  <td><strong>DimProduct</strong></td>
+                  <td>ProductKey</td>
+                  <td>FactSales</td>
+                  <td>ProductKey</td>
+                  <td>1 to Many (1:*)</td>
+                  <td>Single</td>
+                </tr>
+                <tr>
+                  <td><strong>DimGeography</strong></td>
+                  <td>GeoKey</td>
+                  <td>FactSales</td>
+                  <td>GeoKey</td>
+                  <td>1 to Many (1:*)</td>
+                  <td>Single</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3>Enterprise DAX Measures Library</h3>
+              <p>Audited DAX expressions achieving $0.00 mathematical parity with Python engine</p>
+            </div>
+          </div>
+
+          <div class="dax-item">
+            <div class="dax-header">
+              <span class="dax-name">[Total Sales]</span>
+              <button class="copy-btn">Copy DAX</button>
+            </div>
+            <pre class="dax-body">[Total Sales] = 
+SUM(FactSales[Sales])</pre>
+          </div>
+
+          <div class="dax-item">
+            <div class="dax-header">
+              <span class="dax-name">[Profit Margin %]</span>
+              <button class="copy-btn">Copy DAX</button>
+            </div>
+            <pre class="dax-body">[Profit Margin %] = 
+DIVIDE([Total Profit], [Total Sales], 0)</pre>
+          </div>
+
+          <div class="dax-item">
+            <div class="dax-header">
+              <span class="dax-name">[Sales YoY Growth %]</span>
+              <button class="copy-btn">Copy DAX</button>
+            </div>
+            <pre class="dax-body">[Sales YoY Growth %] = 
+VAR _Current = [Total Sales]
+VAR _Previous = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(DimDate[Date]))
+RETURN
+    DIVIDE(_Current - _Previous, _Previous, BLANK())</pre>
+          </div>
+
+          <div class="dax-item">
+            <div class="dax-header">
+              <span class="dax-name">[Total Losses]</span>
+              <button class="copy-btn">Copy DAX</button>
+            </div>
+            <pre class="dax-body">[Total Losses] = 
+CALCULATE(
+    SUM(FactSales[Profit]),
+    FactSales[Profit] &lt; 0
+)</pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- TAB 4: MODULE C - RETENTION & CHURN -->
+      <!-- =================================================================== -->
+      <section id="retention" class="tab-pane">
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">Eligible Subscribers</span><span class="kpi-pill pill-primary">Audited</span></div>
+            <div class="kpi-value">7,043</div>
+            <div class="kpi-subtitle">Explicit Denominator Disclosed</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">Baseline Churn Rate</span><span class="kpi-pill pill-danger">1,869 Churned</span></div>
+            <div class="kpi-value">26.54%</div>
+            <div class="kpi-subtitle">Retention Rate: 73.46% (5,174 Retained)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">Monthly Revenue At Risk</span><span class="kpi-pill pill-danger">MRR Risk</span></div>
+            <div class="kpi-value">$139,130.85</div>
+            <div class="kpi-subtitle">30.50% of Monthly Recurring Revenue</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-header"><span class="kpi-title">ML Model Benchmark</span><span class="kpi-pill pill-success">Leak-Free</span></div>
+            <div class="kpi-value">0.8418</div>
+            <div class="kpi-subtitle">Logistic Regression ROC-AUC (80/20 Split)</div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Churn Rate by Contract Commitment Type</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/churn_01_distribution_by_contract.png" alt="Churn by Contract">
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Tenure Cohort Retention vs. Churn Profile</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/churn_02_tenure_cohort_retention.png" alt="Tenure Cohorts">
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Fiber Optic Support Interaction Risk Matrix</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/churn_04_service_combination_churn.png" alt="Support Service Risk">
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Machine Learning Top Retention Drivers</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/churn_05_feature_importance_risk.png" alt="Feature Importance">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- TAB 5: MODULE D - FINANCIAL SIMULATOR -->
+      <!-- =================================================================== -->
+      <section id="finance" class="tab-pane">
+        <!-- Interactive Simulator Card -->
+        <div class="card-panel" style="border: 2px solid #BFDBFE;">
+          <div class="card-panel-header">
+            <div>
+              <h3>Interactive Financial What-If Scenario Simulator</h3>
+              <p>Simulate pricing discipline and cost containment live in your browser (Mathematical Simulation)</p>
+            </div>
+            <span class="kpi-pill pill-primary">Interactive Engine</span>
+          </div>
+
+          <div class="sim-controls">
+            <div class="sim-slider-group">
+              <div class="sim-slider-label">
+                <span>Discount Rationalization (% Cut):</span>
+                <span id="val-discount" class="sim-slider-value">0% Cut</span>
+              </div>
+              <input type="range" id="sim-discount" min="0" max="30" step="1" value="0">
+              <span style="font-size: 10px; color: var(--text-muted);">Reduces $9.2M in annual price concessions</span>
+            </div>
+
+            <div class="sim-slider-group">
+              <div class="sim-slider-label">
+                <span>COGS Production Optimization (% Cut):</span>
+                <span id="val-cogs" class="sim-slider-value">0% Cut</span>
+              </div>
+              <input type="range" id="sim-cogs" min="0" max="10" step="0.5" value="0">
+              <span style="font-size: 10px; color: var(--text-muted);">Reduces unit production manufacturing costs</span>
+            </div>
+
+            <div class="sim-slider-group">
+              <div class="sim-slider-label">
+                <span>Volume Shift / Elasticity (% Shift):</span>
+                <span id="val-volume" class="sim-slider-value">0% Shift</span>
+              </div>
+              <input type="range" id="sim-volume" min="-10" max="10" step="1" value="0">
+              <span style="font-size: 10px; color: var(--text-muted);">Sales volume adjustment from pricing changes</span>
+            </div>
+          </div>
+
+          <!-- Live Simulated Output Tiles -->
+          <div class="kpi-grid" style="margin-bottom: 0;">
+            <div class="kpi-card" style="background: #F8FAFC;">
+              <span class="kpi-title">Simulated Gross Profit</span>
+              <div id="sim-profit-value" class="kpi-value" style="color: var(--color-success);">$16,893,702</div>
+              <div class="kpi-subtitle">Baseline: $16,893,702</div>
+            </div>
+
+            <div class="kpi-card" style="background: #F8FAFC;">
+              <span class="kpi-title">Simulated Gross Margin %</span>
+              <div id="sim-margin-value" class="kpi-value" style="color: var(--color-primary);">14.23%</div>
+              <div class="kpi-subtitle">Baseline: 14.23%</div>
+            </div>
+
+            <div class="kpi-card" style="background: #F8FAFC;">
+              <span class="kpi-title">Profit Delta Impact</span>
+              <div id="sim-delta-dollar" class="kpi-value">$0</div>
+              <div id="sim-delta-pct" class="kpi-subtitle">(+0.00%)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Net Sales vs. Profit by Customer Segment</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/fin_01_revenue_profit_by_segment.png" alt="Segment Financial Contribution">
+            </div>
+          </div>
+
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <h3>Geographic Gross Margin Distribution (%)</h3>
+            </div>
+            <div class="figure-container">
+              <img src="assets/fin_02_country_margin_distribution.png" alt="Geographic Margin">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <h3>Scenario Intelligence Stress-Testing Matrix</h3>
+          </div>
+          <div class="figure-container">
+            <img src="assets/fin_04_scenario_sensitivity_simulation.png" alt="Scenario Simulation">
+          </div>
+        </div>
+      </section>
+
+      <!-- =================================================================== -->
+      <!-- TAB 6: EVIDENCE REGISTER & AUDIT -->
+      <!-- =================================================================== -->
+      <section id="evidence" class="tab-pane">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3>Formal Empirical Evidence Register</h3>
+              <p>Traceable calculation formulas and quantified business observations</p>
+            </div>
+          </div>
+
+          <input type="text" id="evidence-search" class="search-box" placeholder="Search by finding ID, module, metric, or keyword (e.g., Tables, Churn, Margin, West)...">
+
+          <div class="data-table-container">
+            <table class="data-table" id="evidence-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Module</th>
+                  <th>Requirement</th>
+                  <th>Calculation Formula</th>
+                  <th>Observation</th>
+                  <th>Recommendation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>RET-001</strong></td>
+                  <td>Retail Revenue</td>
+                  <td>Category Margin Divergence</td>
+                  <td><code>DIVIDE(Total_Profit, Total_Sales, 0)</code></td>
+                  <td>Furniture generated 32.3% of sales ($742k) but only 6.4% of profit ($18.5k), yielding a 2.49% margin.</td>
+                  <td>Enforce 15% discount ceiling on Furniture.</td>
+                </tr>
+                <tr>
+                  <td><strong>RET-002</strong></td>
+                  <td>Retail Revenue</td>
+                  <td>Sub-Category Loss Leaders</td>
+                  <td><code>SUM(Profit) WHERE Sub-Category == 'Tables'</code></td>
+                  <td>Tables recorded -$17,725.48 net loss (-8.56% margin).</td>
+                  <td>Mandatory managerial sign-off for discounts >20%.</td>
+                </tr>
+                <tr>
+                  <td><strong>RET-003</strong></td>
+                  <td>Retail Revenue</td>
+                  <td>20% Discount Cliff Edge</td>
+                  <td><code>SUM(Profit) GROUP BY Discount Band</code></td>
+                  <td>Orders discounted >20% destroyed -$156,131.29 across 1,871 transactions.</td>
+                  <td>Replace cash discounts with non-cash shipping perks.</td>
+                </tr>
+                <tr>
+                  <td><strong>RET-004</strong></td>
+                  <td>Retail Revenue</td>
+                  <td>Regional Disparity</td>
+                  <td><code>DIVIDE(Profit, Sales) GROUP BY Region</code></td>
+                  <td>West led in margin (14.94%), while Central lagged at 7.92% due to high average discounting (17.2%).</td>
+                  <td>Align regional compensation to net profit dollars.</td>
+                </tr>
+                <tr>
+                  <td><strong>RET-005</strong></td>
+                  <td>Retail Revenue</td>
+                  <td>Q4 Holiday Surge</td>
+                  <td><code>SUM(Sales) GROUP BY Year, Month</code></td>
+                  <td>Q4 sales outpaced Q1 by +120.1%, with 2018 revenue accelerating +20.3% YoY.</td>
+                  <td>Advance inventory stocking to August.</td>
+                </tr>
+                <tr>
+                  <td><strong>CHR-001</strong></td>
+                  <td>Customer Retention</td>
+                  <td>Contract Duration Risk</td>
+                  <td><code>DIVIDE(Churned, Total, 0) * 100</code></td>
+                  <td>Month-to-month contracts churned at 42.71% vs 2.83% for 2-year contracts.</td>
+                  <td>Incentivize 12-month commitments with rate freeze.</td>
+                </tr>
+                <tr>
+                  <td><strong>CHR-002</strong></td>
+                  <td>Customer Retention</td>
+                  <td>Year 1 Onboarding Cliff</td>
+                  <td><code>DIVIDE(Churned_Cohort, Cohort_Total)</code></td>
+                  <td>Year 1 accounts (0-12 months) exhibited 47.44% churn rate (1,037 accounts).</td>
+                  <td>Deploy Day-7 and Day-30 white-glove check-ins.</td>
+                </tr>
+                <tr>
+                  <td><strong>CHR-003</strong></td>
+                  <td>Customer Retention</td>
+                  <td>Fiber Optic Support Deficit</td>
+                  <td><code>DIVIDE(Churned_Fiber, Total_Fiber)</code></td>
+                  <td>Fiber optic without Tech Support churned at 41.6% vs 15.4% when bundled.</td>
+                  <td>Bundle 6 months complimentary Tech Support.</td>
+                </tr>
+                <tr>
+                  <td><strong>FIN-001</strong></td>
+                  <td>Financial Modeling</td>
+                  <td>Accounting Identity Audit</td>
+                  <td><code>Gross ($127.9M) - Disc ($9.2M) - COGS ($101.8M)</code></td>
+                  <td>COGS is 85.77% of Net Sales; Gross Profit is $16.89M (14.23% margin).</td>
+                  <td>Renegotiate component supplier pricing for 3-5% cut.</td>
+                </tr>
+                <tr>
+                  <td><strong>FIN-002</strong></td>
+                  <td>Financial Modeling</td>
+                  <td>What-If Scenario Simulation</td>
+                  <td><code>(Gross * Vol - Disc) - (COGS * Vol * CostRed)</code></td>
+                  <td>-10% discounts + -5% COGS expands gross profit by +$1.42M (+8.43%).</td>
+                  <td>Hedging and pricing discipline clauses in contracts.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
